@@ -1,3 +1,52 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 1000
+  #oauth 설정
+  security:
+    oauth2:
+      client:
+        registration:
+          spotify:
+            provider: spotify
+            client-id: '{cipher}AQBDPLLb+3IbXVIlckSQRmR/ie5o8gFtKl1eyWGs+YSh9n3ePfL4B0ovTAhvG1A0HujcG7UpcxzF12xcWMjBodyAHB3q34MIDpPnD137eHtG3yZgLEu9b1tVe96ccMtRttqPj6gPMtgkv6RWf7DG6E+ntqVo3dlInugl7Vq6izdUiIAqWy3FC7SjmCfTmF6Ue6Q5h0VTRVMbopXmAwSw0CJh4KChYkQJ55RcpE2sqziQmuI2fKU53xf0wpV/e12RF6xCFaYGI9G/SFNJE0YVGn5hU0DQDwnRWifezWHxiac5GyGDGdC0a1u4mq+ZXY5UFdfKAW9OO54gn4+VIGMXyoxQ81f9oGAaBRTHrnl7LtWMaS9pYt3q+DT4rWjrnrx8uUPJUE9yuyM/6lAca0RpZsALvTlQYpW6S6dWTKpx0xlxhg=='
+            client-secret: '{cipher}AQAsqUhqUhMOK1Q20vGQ6SZBYnGtCBNC6Ku8f5SLB0rbMcfW6pduucLSXlPFJTkGQX87scm0gbrvos51+d96XCpd5/qTTJPx+zcApV3QQHYrAlpdqtfm+/djb3Mu9IEYoe0hMAzkSdpwiScsCNYf3cVeQZKa5Mvc6ZGzcJ3Xhd94tAd2/1XTGza2ZEwMBUN0/xuIxbjUUCPVYoHmyVfdCwvpgKBkvDOjCZTIg5ED7TD9gAyUOgwIFudbj3K046LX51rHZd0Tltr+/fmhA9TBn0fy/m1uFZTy1na7G896J0a5WjF64Pst9lCFitnzOBNL3szZJpaCqKwDP8kuZQbwEHsDMeGOVX6YIm1L7PKOUtH9/YV/O1mFmo7XGnCWcJQN/GoAWeBtMjwrMEI6X6/9vzOjgXr/91ivtm98VFyF1gOdNw=='
+            scope: user-read-email,user-read-private
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/oauth2/callback/spotify
+
+        provider:
+          spotify:
+            authorization-uri: https://accounts.spotify.com/authorize
+            token-uri: https://accounts.spotify.com/api/token
+            user-info-uri: https://api.spotify.com/v1/me
+            user-name-attribute: id
+
+  #Swaager 사용에 필요
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+logging:
+  level:
+    root: info
+  
 jwt:
-  secret: 'test'
-  expiration: 100000
+  secretKey: '{cipher}AQA6vnztf4icKd2z9D+DovxzHn+iX1XOrXWYjeiFOuRS/3bLchMombzy0AJjzhx4ibCEIaCHcxro+Eb9DtN4gSNCuEtNgAlKab65xS1A+yZ7IQsGU/yQGdXImDQs4uLy8UXh9rit4Rgf6exfF8E1K9+SPRxNl6AKL1cpJ7mFMS96Im92SyMNVFJiOnPjI/jXFsd/YQvZH7kleDFbFKRKI3L7xv+A0k1JjcNytT0NOTf3yhgk4/Ei3HXXfx6fJiMDT+mrffxMv4AiTQ1lAzbkHSf27EgtmE98tJxu/jwWRvQ7kd7KmnQgDh5TOy3QolvdKFzEMEasEo0wV9lwX5adD662bayzJMbcpeiNZfAVbkIqeuAVgliYiREWoe84t9OdUae7Tw+LYsEof5AgUx4RubLTEnSHh88U3VBi80IReC8nMQw8rmpVUSqXjUEl+TVB6FI13i0udSI9SLCD0rHV3oI1DkAFJU3gpk2TC4Obto7Bi4m5Q0eDxcMk5gMnxcJKUdM='
+
+  access:
+    expiration: 3600000 # ms -> 1시간
+    header: Authorization
+
+  refresh:
+    expiration: 1209600000 #  ms -> 2주
+    header: Authorization-refresh
+
+  redirect:
+    http://localhost:5173/oauth2/redirect
