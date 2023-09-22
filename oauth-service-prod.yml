@@ -60,4 +60,4 @@ jwt:
     header: Authorization-refresh
 
   redirect:
-    http://localhost:5173/oauth2/redirect
+    sieum://oauth/callback
