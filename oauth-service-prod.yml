@@ -30,7 +30,7 @@ spring:
             client-secret: '{cipher}AQAsqUhqUhMOK1Q20vGQ6SZBYnGtCBNC6Ku8f5SLB0rbMcfW6pduucLSXlPFJTkGQX87scm0gbrvos51+d96XCpd5/qTTJPx+zcApV3QQHYrAlpdqtfm+/djb3Mu9IEYoe0hMAzkSdpwiScsCNYf3cVeQZKa5Mvc6ZGzcJ3Xhd94tAd2/1XTGza2ZEwMBUN0/xuIxbjUUCPVYoHmyVfdCwvpgKBkvDOjCZTIg5ED7TD9gAyUOgwIFudbj3K046LX51rHZd0Tltr+/fmhA9TBn0fy/m1uFZTy1na7G896J0a5WjF64Pst9lCFitnzOBNL3szZJpaCqKwDP8kuZQbwEHsDMeGOVX6YIm1L7PKOUtH9/YV/O1mFmo7XGnCWcJQN/GoAWeBtMjwrMEI6X6/9vzOjgXr/91ivtm98VFyF1gOdNw=='
             scope: user-read-email,user-read-private
             authorization-grant-type: authorization_code
-            redirect-uri: https://1tcaynd2fk.execute-api.ap-northeast-2.amazonaws.com/sieum/oauth/oauth2/callback/spotify
+            redirect-uri: https://1tcaynd2fk.execute-api.ap-northeast-2.amazonaws.com/sieum/oauth2/callback/spotify
 
         provider:
           spotify:
