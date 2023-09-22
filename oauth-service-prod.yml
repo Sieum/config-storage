@@ -14,7 +14,7 @@ spring:
       auto-commit: true
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
