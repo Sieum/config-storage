@@ -1,0 +1,9 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIA4LIEXC42H6I3YJYA
+      secret-key: 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
+    region:
+      static: ap-northeast-2
+    s3:
+      bucket: sieum-bucket
