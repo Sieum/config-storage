@@ -1,14 +1,9 @@
-server:
-  port: 8082
-
 spring:
-  config:
-    import: optional:configserver://
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DB_URL}
+    url: jdbc:mysql://sieum-database.czgcdgyy7baz.ap-northeast-2.rds.amazonaws.com:3306/sieum?serverTimezone=Asia/Seoul
     username: admin
     password: sieum605
+    driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 10
       minimum-idle: 10
@@ -26,7 +21,7 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         format_sql: true
