@@ -52,7 +52,7 @@ jwt:
   secretKey: '{cipher}AQA6vnztf4icKd2z9D+DovxzHn+iX1XOrXWYjeiFOuRS/3bLchMombzy0AJjzhx4ibCEIaCHcxro+Eb9DtN4gSNCuEtNgAlKab65xS1A+yZ7IQsGU/yQGdXImDQs4uLy8UXh9rit4Rgf6exfF8E1K9+SPRxNl6AKL1cpJ7mFMS96Im92SyMNVFJiOnPjI/jXFsd/YQvZH7kleDFbFKRKI3L7xv+A0k1JjcNytT0NOTf3yhgk4/Ei3HXXfx6fJiMDT+mrffxMv4AiTQ1lAzbkHSf27EgtmE98tJxu/jwWRvQ7kd7KmnQgDh5TOy3QolvdKFzEMEasEo0wV9lwX5adD662bayzJMbcpeiNZfAVbkIqeuAVgliYiREWoe84t9OdUae7Tw+LYsEof5AgUx4RubLTEnSHh88U3VBi80IReC8nMQw8rmpVUSqXjUEl+TVB6FI13i0udSI9SLCD0rHV3oI1DkAFJU3gpk2TC4Obto7Bi4m5Q0eDxcMk5gMnxcJKUdM='
 
   access:
-    expiration: 3600000 # ms -> 1시간
+    expiration: 1209600000 # ms -> 1시간
     header: Authorization
 
   refresh:
